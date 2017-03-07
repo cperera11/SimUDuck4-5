@@ -16,7 +16,8 @@ public class MiniDuckSimulator {
                     duck.performFly();
                     duck.performQuack();
                     duck.performSwim();
-                    System.out.println("--------");
+                    
+                    System.out.println("-----------");
                 }
 
 	}

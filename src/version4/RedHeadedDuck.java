@@ -35,9 +35,9 @@ public class RedHeadedDuck implements Duck {
         return swimBehavior;
     }
 
-    public void setSwimBehavior(SwimBehavior swimBehavior) {
+    public final void setSwimBehavior(SwimBehavior swimBehavior) {
         if(swimBehavior == null || swimBehavior.toString().isEmpty()){
-        throw new IllegalArgumentException("QuackBehavior cannot be null or empty!");
+        throw new IllegalArgumentException("Quack behavior cannot be null or empty!");
         }
         this.swimBehavior = swimBehavior;
     }
@@ -48,7 +48,7 @@ public class RedHeadedDuck implements Duck {
 
     public final void setFlyBehavior(FlyBehavior flyBehavior) {
         if (flyBehavior == null || flyBehavior.toString().isEmpty()){
-            throw new IllegalArgumentException("FlyBehavior cannot be null or empty!");
+            throw new IllegalArgumentException("Fly behavior cannot be null or empty!");
         }
         this.flyBehavior = flyBehavior;
     }
@@ -59,14 +59,14 @@ public class RedHeadedDuck implements Duck {
 
     public final void setQuackBehavior(QuackBehavior quackBehavior) {
         if(quackBehavior == null || quackBehavior.toString().isEmpty()){
-        throw new IllegalArgumentException("QuackBehavior cannot be null or empty!");
+        throw new IllegalArgumentException("Swim behavior cannot be null or empty!");
         }
         this.quackBehavior = quackBehavior;
     }
                 
     @Override
-    public void display() {
-		System.out.println("I'm a Red Heade Duck");
+    public final void display() {
+		System.out.println("I'm a Red Headed Duck");
 	}
 
     @Override
@@ -81,7 +81,7 @@ public class RedHeadedDuck implements Duck {
 
     @Override
     public void performSwim() {
-        
+        swimBehavior.swim();
     }
 	
       	

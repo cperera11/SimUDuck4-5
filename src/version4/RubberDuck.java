@@ -11,11 +11,11 @@ public class RubberDuck implements Duck {
                 setSwimBehavior(swimBehavior);
 	}
 
-   public SwimBehavior getSwimBehavior() {
+   public final SwimBehavior getSwimBehavior() {
         return swimBehavior;
     }
 
-    public void setSwimBehavior(SwimBehavior swimBehavior) {
+    public final void setSwimBehavior(SwimBehavior swimBehavior) {
         if(swimBehavior == null || swimBehavior.toString().isEmpty()){
         throw new IllegalArgumentException("QuackBehavior cannot be null or empty!");
         }
@@ -44,7 +44,7 @@ public class RubberDuck implements Duck {
     }
                 
     @Override
-    public void display() {
+    public final void display() {
 		System.out.println("I'm a Rubber Duck");
 	}
 
@@ -59,7 +59,7 @@ public class RubberDuck implements Duck {
     }
 
     @Override
-    public void performSwim() {
+    public final void performSwim() {
         
     }
 }

@@ -38,7 +38,7 @@ public class MallardDuck implements Duck {
 
     public final void setFlyBehavior(FlyBehavior flyBehavior) {
         if (flyBehavior == null || flyBehavior.toString().isEmpty()){
-            throw new IllegalArgumentException("FlyBehavior cannot be null or empty!");
+            throw new IllegalArgumentException("Fly behavior cannot be null or empty!");
         }
         this.flyBehavior = flyBehavior;
     }
@@ -49,18 +49,18 @@ public class MallardDuck implements Duck {
 
     public final void setQuackBehavior(QuackBehavior quackBehavior) {
         if(quackBehavior == null || quackBehavior.toString().isEmpty()){
-        throw new IllegalArgumentException("QuackBehavior cannot be null or empty!");
+        throw new IllegalArgumentException("Quack behavior cannot be null or empty!");
         }
         this.quackBehavior = quackBehavior;
     }
 
-    public SwimBehavior getSwimBehavior() {
+    public final SwimBehavior getSwimBehavior() {
         return swimBehavior;
     }
 
-    public void setSwimBehavior(SwimBehavior swimBehavior) {
+    public final void setSwimBehavior(SwimBehavior swimBehavior) {
         if(swimBehavior == null || swimBehavior.toString().isEmpty()){
-        throw new IllegalArgumentException("QuackBehavior cannot be null or empty!");
+        throw new IllegalArgumentException("Swim behavior cannot be null or empty!");
         }
         this.swimBehavior = swimBehavior;
     }
@@ -81,8 +81,8 @@ public class MallardDuck implements Duck {
     }
 
     @Override
-    public void performSwim() {
-        
+    public final void performSwim() {
+        swimBehavior.swim();
     }
 	
 }
