@@ -23,11 +23,24 @@ public class RedHeadedDuck implements Duck {
 	
 	private FlyBehavior flyBehavior;
 	private QuackBehavior quackBehavior;
+        private SwimBehavior swimBehavior;
         
-	public RedHeadedDuck(FlyBehavior flyBehavior,QuackBehavior quackBehavior) {
+	public RedHeadedDuck(FlyBehavior flyBehavior,QuackBehavior quackBehavior,SwimBehavior swimBehavior) {
 		setFlyBehavior(flyBehavior);
                 setQuackBehavior(quackBehavior);
+                setSwimBehavior(swimBehavior);
 	}
+
+   public SwimBehavior getSwimBehavior() {
+        return swimBehavior;
+    }
+
+    public void setSwimBehavior(SwimBehavior swimBehavior) {
+        if(swimBehavior == null || swimBehavior.toString().isEmpty()){
+        throw new IllegalArgumentException("QuackBehavior cannot be null or empty!");
+        }
+        this.swimBehavior = swimBehavior;
+    }
 
     public final FlyBehavior getFlyBehavior() {
         return flyBehavior;
@@ -67,7 +80,7 @@ public class RedHeadedDuck implements Duck {
     }
 
     @Override
-    public final void swim() {
+    public void performSwim() {
         
     }
 	

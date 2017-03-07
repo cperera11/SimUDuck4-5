@@ -23,10 +23,13 @@ public class MallardDuck implements Duck {
 	
 	private FlyBehavior flyBehavior;
 	private QuackBehavior quackBehavior;
+        private SwimBehavior swimBehavior;
         
-	public MallardDuck(FlyBehavior flyBehavior,QuackBehavior quackBehavior) {
+        
+	public MallardDuck(FlyBehavior flyBehavior,QuackBehavior quackBehavior, SwimBehavior swimBehavior) {
 		setFlyBehavior(flyBehavior);
                 setQuackBehavior(quackBehavior);
+                setSwimBehavior(swimBehavior);
 	}
 
     public final FlyBehavior getFlyBehavior() {
@@ -50,6 +53,17 @@ public class MallardDuck implements Duck {
         }
         this.quackBehavior = quackBehavior;
     }
+
+    public SwimBehavior getSwimBehavior() {
+        return swimBehavior;
+    }
+
+    public void setSwimBehavior(SwimBehavior swimBehavior) {
+        if(swimBehavior == null || swimBehavior.toString().isEmpty()){
+        throw new IllegalArgumentException("QuackBehavior cannot be null or empty!");
+        }
+        this.swimBehavior = swimBehavior;
+    }
                 
     @Override
     public final void display() {
@@ -67,7 +81,7 @@ public class MallardDuck implements Duck {
     }
 
     @Override
-    public final void swim() {
+    public void performSwim() {
         
     }
 	

@@ -13,7 +13,7 @@ public interface Duck {
 	
 	public abstract void performFly();
 	
-	public abstract void swim();
+	public abstract void performSwim();
 	
 	
 	

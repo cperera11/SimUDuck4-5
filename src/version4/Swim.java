@@ -9,6 +9,10 @@ package version4;
  *
  * @author CPere
  */
-public class Swim {
-    
+public class Swim implements SwimBehavior{
+
+    @Override
+    public void swim() {
+        System.out.println("I am swimming");
+    }
 }
