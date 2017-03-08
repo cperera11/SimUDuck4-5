@@ -11,6 +11,10 @@ private FlyBehavior flyBehavior;
                 setSwimBehavior(swimBehavior);
 	}
 
+    public ModelDuck() {
+    }
+
+      
    public final SwimBehavior getSwimBehavior() {
         return swimBehavior;
     }

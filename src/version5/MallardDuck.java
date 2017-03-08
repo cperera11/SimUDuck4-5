@@ -32,6 +32,10 @@ public class MallardDuck implements Duck {
                 setSwimBehavior(swimBehavior);
 	}
 
+    public MallardDuck() {
+    }
+        
+      
     public final FlyBehavior getFlyBehavior() {
         return flyBehavior;
     }

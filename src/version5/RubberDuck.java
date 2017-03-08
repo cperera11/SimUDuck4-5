@@ -12,6 +12,10 @@ public class RubberDuck implements Duck {
                 setSwimBehavior(swimBehavior);
 	}
 
+    public RubberDuck() {
+    }
+
+        
    public final SwimBehavior getSwimBehavior() {
         return swimBehavior;
     }

@@ -34,8 +34,10 @@ public class MiniDuckSimulator {
              ducks[i].setQuackBehavior(qbs[rand.nextInt(fbs.length)]);
              ducks[i].setSwimBehavior(sbs[rand.nextInt(fbs.length)]);
              
+            Duck[] newDucks = {new MallardDuck(),new ModelDuck(),new RubberDuck()};
             
              System.out.println("Randomly selected behaviors");
+             newDucks[i].display();
              ducks[i].performFly();
              ducks[i].performQuack();
              ducks[i].performSwim();
