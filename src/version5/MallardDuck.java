@@ -19,18 +19,71 @@ package version5;
  * of polymorphism, dynamically asign a different QuackBehavior
  * implementation at runtime. We'll see this later.
  */	
-public class MallardDuck extends Duck {
+public class MallardDuck implements Duck {
 	
-	public MallardDuck() {
-		// these properties are inherited from Duck
-		quackBehavior = new Quack();
-		flyBehavior = new FlyWithWings();
-	}
-	
-	public void display() {
-		System.out.println("I'm a Mallard Duck");
+	private FlyBehavior flyBehavior;
+	private QuackBehavior quackBehavior;
+        private SwimBehavior swimBehavior;
+        
+        
+	public MallardDuck(FlyBehavior flyBehavior,QuackBehavior quackBehavior, SwimBehavior swimBehavior) {
+		setFlyBehavior(flyBehavior);
+                setQuackBehavior(quackBehavior);
+                setSwimBehavior(swimBehavior);
 	}
 
-        
+    public final FlyBehavior getFlyBehavior() {
+        return flyBehavior;
+    }
+
+    public final void setFlyBehavior(FlyBehavior flyBehavior) {
+        if (flyBehavior == null || flyBehavior.toString().isEmpty()){
+            throw new IllegalArgumentException("Fly behavior cannot be null or empty!");
+        }
+        this.flyBehavior = flyBehavior;
+    }
+
+    public final QuackBehavior getQuackBehavior() {
+        return quackBehavior;
+    }
+
+        @Override
+    public final void setQuackBehavior(QuackBehavior quackBehavior) {
+        if(quackBehavior == null || quackBehavior.toString().isEmpty()){
+        throw new IllegalArgumentException("Quack behavior cannot be null or empty!");
+        }
+        this.quackBehavior = quackBehavior;
+    }
+
+    public final SwimBehavior getSwimBehavior() {
+        return swimBehavior;
+    }
+
+    public final void setSwimBehavior(SwimBehavior swimBehavior) {
+        if(swimBehavior == null || swimBehavior.toString().isEmpty()){
+        throw new IllegalArgumentException("Swim behavior cannot be null or empty!");
+        }
+        this.swimBehavior = swimBehavior;
+    }
+                
+    @Override
+    public final void display() {
+        System.out.println("I'm a Mallard Duck");
+	}
+
+    @Override
+    public final void performQuack() {
+        quackBehavior.quack();
+    }
+
+    @Override
+    public final void performFly() {
+        flyBehavior.fly();
+    }
+
+    @Override
+    public final void performSwim() {
+        swimBehavior.swim();
+    }
 	
 }

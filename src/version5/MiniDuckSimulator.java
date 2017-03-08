@@ -1,24 +1,45 @@
 package version5;
 
+import java.util.Random;
+
 public class MiniDuckSimulator {
 
 	public static void main(String[] args) {
-		Duck mallard = new MallardDuck();
-		mallard.display();
-		mallard.performQuack();
-		mallard.performFly();
+            
+            Duck mallardDuck = new MallardDuck(new FlyWithWings(), new Quack(), new Swim());
+            Duck modelDuck = new ModelDuck(new FlyWithWings(), new Quack(), new Swim());
+            Duck rubberDuck = new RubberDuck(new FlyNoWay(), new Squeak(), new Float());
+            
+            
+		Duck[] ducks = {mallardDuck,modelDuck,rubberDuck};
                 
-                mallard.setFlyBehavior(new FlyRocketPowered());
-                mallard.setQuackBehavior(new Squeak());
-		mallard.performQuack();
-		mallard.performFly();
+                for(Duck duck: ducks ){
+                    
+                    duck.display();
+                    duck.performFly();
+                    duck.performQuack();
+                    duck.performSwim();
+                    
+                    System.out.println("-----------");
+                }
+            final Random rand = new Random();
+            int i = rand.nextInt(ducks.length);
+            
+            FlyBehavior[] fbs = {new FlyWithWings(),new FlyNoWay(), new FlyRocketPowered()};
+            QuackBehavior [] qbs = {new Quack(),new Squeak(),new MuteQuack()};
+            SwimBehavior [] sbs = {new Float(),new Swim()};
+                       
+            
+             ducks[i].setFlyBehavior(fbs[rand.nextInt(fbs.length)]);
+             ducks[i].setQuackBehavior(qbs[rand.nextInt(fbs.length)]);
+             ducks[i].setSwimBehavior(sbs[rand.nextInt(fbs.length)]);
+             
+            
+             System.out.println("Randomly selected behaviors");
+             ducks[i].performFly();
+             ducks[i].performQuack();
+             ducks[i].performSwim();
+	
 
-		Duck model = new ModelDuck();
-		model.display();
-		model.performFly();
-                
-		model.setFlyBehavior( new FlyRocketPowered() );
-		model.performFly();
-	}
-
+        }
 }

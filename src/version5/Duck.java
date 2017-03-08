@@ -8,44 +8,22 @@ package version5;
  * @author jlombardo
  *
  */
-public abstract class Duck {
-	// Instance variables of interface type
-	// Each duck has a reference to something that implements the behaviors
-	// via an interface. Hey, isn't this composition the DIP way!!!
-	// Only problem is we still have the limitation that all Ducks
-	// have fly and quack behaviors, even thought that is not always needed.
-	FlyBehavior flyBehavior;
-	QuackBehavior quackBehavior;
-	
-	public Duck() {}
-	
-	public void setFlyBehavior(FlyBehavior fb) {
- 		flyBehavior = fb;
-	}
-	
-	public void setQuackBehavior(QuackBehavior qb) {
-		quackBehavior = qb;
-	}
-	
+public interface Duck {
+    
+    
 	public abstract void display();
 	
-	/*
-	 * Rather than handling the quack behavior itself, the Duck object
-	 * delegates that behavior to the object referenced by quackBehavior.
-	 * This object is unknown -- that's DIP in action!
-	 */
-	public void performQuack(){
-		quackBehavior.quack();
-	}
+	public abstract void performQuack();
 	
-	public void performFly() {
-		flyBehavior.fly();
-	}
+	public abstract void performFly();
 	
-	public void swim() {
-		System.out.println("All ducks float, even decoys!");
-	}
-	
-	
-	// OTHER DUCK-LIKE METHODS
+	public abstract void performSwim();
+        
+        public abstract void setFlyBehavior(FlyBehavior flyBehavior);
+        
+        public abstract void setQuackBehavior(QuackBehavior quackBehavior);
+        
+        public abstract void setSwimBehavior(SwimBehavior swimBehavior);
+        
+        // OTHER DUCK-LIKE METHODS
 }
