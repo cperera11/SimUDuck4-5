@@ -36,7 +36,7 @@ public class MiniDuckSimulator {
              
             Duck[] newDucks = {new MallardDuck(),new ModelDuck(),new RubberDuck()};
             
-             System.out.println("Randomly selected behaviors");
+             System.out.println("---Randomly selected behaviors---");
              newDucks[i].display();
              ducks[i].performFly();
              ducks[i].performQuack();
