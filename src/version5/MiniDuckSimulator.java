@@ -22,6 +22,8 @@ public class MiniDuckSimulator {
                     
                     System.out.println("-----------");
                 }
+                
+                // Randomly set values in runtime
             final Random rand = new Random();
             int i = rand.nextInt(ducks.length);
             
