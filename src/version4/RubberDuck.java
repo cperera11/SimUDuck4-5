@@ -4,6 +4,7 @@ public class RubberDuck implements Duck {
     private FlyBehavior flyBehavior;
     private QuackBehavior quackBehavior;
     private SwimBehavior swimBehavior;
+    private double price;
         
 	public RubberDuck(FlyBehavior flyBehavior,QuackBehavior quackBehavior,SwimBehavior swimBehavior) {
 		setFlyBehavior(flyBehavior);
@@ -62,4 +63,14 @@ public class RubberDuck implements Duck {
     public final void performSwim() {
         
     }
+
+    public final double getPrice() {
+        return price;
+    }
+
+    public final void setPrice(double price) {
+        this.price = price;
+    }
+    
+    
 }

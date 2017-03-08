@@ -1,9 +1,10 @@
 package version5;
 
 public class ModelDuck implements Duck {
-private FlyBehavior flyBehavior;
+    private FlyBehavior flyBehavior;
     private QuackBehavior quackBehavior;
     private SwimBehavior swimBehavior;
+    private double price;
         
 	public ModelDuck(FlyBehavior flyBehavior,QuackBehavior quackBehavior,SwimBehavior swimBehavior) {
 		setFlyBehavior(flyBehavior);
@@ -67,5 +68,15 @@ private FlyBehavior flyBehavior;
     public final void performSwim() {
         swimBehavior.swim();
     }
+
+    public final double getPrice() {
+        return price;
+    }
+
+    public final void setPrice(double price) {
+        this.price = price;
+    }
+    
+    
 	
 }
